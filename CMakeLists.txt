@@ -10,6 +10,10 @@ option(LIBIGL_WITH_CGAL       "Use CGAL"           ON)
 include(libigl)
 
 # Add your project files
-file(GLOB SRC_FILES *.cpp)
-add_executable(${PROJECT_NAME} ${SRC_FILES})
-target_link_libraries(${PROJECT_NAME} PUBLIC igl::core igl::cgal)
+file(GLOB SRC_FILES cgal_iso_remesh.cpp)
+add_executable(remesh ${SRC_FILES})
+target_link_libraries(remesh PUBLIC igl::core igl::cgal)
+
+file(GLOB SRC_FILES cgal_decimate.cpp)
+add_executable(sec ${SRC_FILES})
+target_link_libraries(sec PUBLIC igl::core igl::cgal)
